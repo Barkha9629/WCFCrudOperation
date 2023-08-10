@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EmployeedbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccountTypeMaster">
+          <Key>
+            <PropertyRef Name="AccountTypeId" />
+          </Key>
+          <Property Name="AccountTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountTypeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="BankDetail">
+          <Key>
+            <PropertyRef Name="BankId" />
+          </Key>
+          <Property Name="BankId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="BankName" Type="nvarchar" MaxLength="50" />
+          <Property Name="BranchName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccountNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccountType" Type="nchar" MaxLength="10" />
+          <Property Name="IFSCCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="UpdateBy" Type="int" />
+          <Property Name="UpdateDate" Type="date" />
+        </EntityType>
+        <EntityType Name="BloodGroupMaster">
+          <Key>
+            <PropertyRef Name="BloodGroupId" />
+          </Key>
+          <Property Name="BloodGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BloodGroupName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="CastMaster">
+          <Key>
+            <PropertyRef Name="CastId" />
+          </Key>
+          <Property Name="CastId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="CityMaster">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateId" Type="int" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="ContactDetail">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Name="ContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="ResidentalAddress" Type="nvarchar" MaxLength="300" />
+          <Property Name="Pincode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="StateId" Type="int" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="MobileNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="LandlineNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="CountryMaster">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="EducationDetail">
+          <Key>
+            <PropertyRef Name="EductaionId" />
+          </Key>
+          <Property Name="EductaionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="Qualification" Type="nvarchar" MaxLength="50" />
+          <Property Name="SchoolName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Colloge/UnivercityName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PassOutYear" Type="int" />
+          <Property Name="Subject/Field" Type="nvarchar" MaxLength="50" />
+          <Property Name="Percentage/Grade" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="EmployeeDetail">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="300" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="300" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Father/HusbandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaritalStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="Height" Type="nvarchar" MaxLength="50" />
+          <Property Name="Weight" Type="nvarchar" MaxLength="50" />
+          <Property Name="BloodGroupId" Type="int" />
+          <Property Name="ReligionId" Type="int" />
+          <Property Name="CastId" Type="int" />
+          <Property Name="SubCastId" Type="int" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="CreateOn" Type="date" />
+          <Property Name="UpdateBy" Type="int" />
+          <Property Name="UpdateOn" Type="date" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Experience">
+          <Key>
+            <PropertyRef Name="ExperienceId" />
+          </Key>
+          <Property Name="ExperienceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateOfJoinning" Type="date" />
+          <Property Name="Experience" Type="int" />
+          <Property Name="PreviousCompanyName" Type="nvarchar" MaxLength="300" />
+          <Property Name="CurrentCompanyName" Type="nvarchar" MaxLength="300" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="RoleId" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Employeedb.dbo.opal' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="opal">
+          <Key>
+            <PropertyRef Name="Empid" />
+          </Key>
+          <Property Name="Empid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BasicSalary" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="HouseRent" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Transportallowance" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="MedicalAllowance" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="PF" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Tax" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="ReligionMaster">
+          <Key>
+            <PropertyRef Name="ReligionId" />
+          </Key>
+          <Property Name="ReligionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReligionName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="salary">
+          <Key>
+            <PropertyRef Name="Empid" />
+          </Key>
+          <Property Name="Empid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BasicSalary" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="HouseRent" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Transportallowance" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="MedicalAllowance" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="PF" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Tax" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="StateMaster">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="SubCastMaster">
+          <Key>
+            <PropertyRef Name="SubCastId" />
+          </Key>
+          <Property Name="SubCastId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CastId" Type="int" />
+          <Property Name="SubCastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Employeedb.dbo.usercredit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="usercredit">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="LoginId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="EmployeedbModelStoreContainer">
+          <EntitySet Name="AccountTypeMaster" EntityType="Self.AccountTypeMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BankDetail" EntityType="Self.BankDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BloodGroupMaster" EntityType="Self.BloodGroupMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CastMaster" EntityType="Self.CastMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CityMaster" EntityType="Self.CityMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactDetail" EntityType="Self.ContactDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CountryMaster" EntityType="Self.CountryMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EducationDetail" EntityType="Self.EducationDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeDetail" EntityType="Self.EmployeeDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Experience" EntityType="Self.Experience" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReligionMaster" EntityType="Self.ReligionMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="salary" EntityType="Self.salary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StateMaster" EntityType="Self.StateMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubCastMaster" EntityType="Self.SubCastMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="opal" EntityType="Self.opal" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [opal].[Empid] AS [Empid], 
+    [opal].[BasicSalary] AS [BasicSalary], 
+    [opal].[HouseRent] AS [HouseRent], 
+    [opal].[Transportallowance] AS [Transportallowance], 
+    [opal].[MedicalAllowance] AS [MedicalAllowance], 
+    [opal].[PF] AS [PF], 
+    [opal].[Tax] AS [Tax], 
+    [opal].[IsActive] AS [IsActive]
+    FROM [dbo].[opal] AS [opal]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="usercredit" EntityType="Self.usercredit" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [usercredit].[LoginId] AS [LoginId], 
+    [usercredit].[UserName] AS [UserName], 
+    [usercredit].[Password] AS [Password], 
+    [usercredit].[EmployeeId] AS [EmployeeId], 
+    [usercredit].[IsActive] AS [IsActive]
+    FROM [dbo].[usercredit] AS [usercredit]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmployeedbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AccountTypeMaster">
+          <Key>
+            <PropertyRef Name="AccountTypeId" />
+          </Key>
+          <Property Name="AccountTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="BankDetail">
+          <Key>
+            <PropertyRef Name="BankId" />
+          </Key>
+          <Property Name="BankId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="BankName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BranchName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccountType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IFSCCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateBy" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="BloodGroupMaster">
+          <Key>
+            <PropertyRef Name="BloodGroupId" />
+          </Key>
+          <Property Name="BloodGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BloodGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="CastMaster">
+          <Key>
+            <PropertyRef Name="CastId" />
+          </Key>
+          <Property Name="CastId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="CityMaster">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateId" Type="Int32" />
+          <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ContactDetail">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Name="ContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="ResidentalAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Pincode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CityId" Type="Int32" />
+          <Property Name="StateId" Type="Int32" />
+          <Property Name="CountryId" Type="Int32" />
+          <Property Name="MobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LandlineNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="CountryMaster">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="EducationDetail">
+          <Key>
+            <PropertyRef Name="EductaionId" />
+          </Key>
+          <Property Name="EductaionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="Qualification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SchoolName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Colloge_UnivercityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PassOutYear" Type="Int32" />
+          <Property Name="Subject_Field" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Percentage_Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="EmployeeDetail">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Father_HusbandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaritalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Height" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BloodGroupId" Type="Int32" />
+          <Property Name="ReligionId" Type="Int32" />
+          <Property Name="CastId" Type="Int32" />
+          <Property Name="SubCastId" Type="Int32" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="CreateOn" Type="DateTime" Precision="0" />
+          <Property Name="UpdateBy" Type="Int32" />
+          <Property Name="UpdateOn" Type="DateTime" Precision="0" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Experience">
+          <Key>
+            <PropertyRef Name="ExperienceId" />
+          </Key>
+          <Property Name="ExperienceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfJoinning" Type="DateTime" Precision="0" />
+          <Property Name="Experience1" Type="Int32" />
+          <Property Name="PreviousCompanyName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentCompanyName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="RoleId" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ReligionMaster">
+          <Key>
+            <PropertyRef Name="ReligionId" />
+          </Key>
+          <Property Name="ReligionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReligionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="salary">
+          <Key>
+            <PropertyRef Name="Empid" />
+          </Key>
+          <Property Name="Empid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BasicSalary" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseRent" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Transportallowance" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MedicalAllowance" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PF" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Tax" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="StateMaster">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CityId" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SubCastMaster">
+          <Key>
+            <PropertyRef Name="SubCastId" />
+          </Key>
+          <Property Name="SubCastId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CastId" Type="Int32" />
+          <Property Name="SubCastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="opal">
+          <Key>
+            <PropertyRef Name="Empid" />
+          </Key>
+          <Property Name="Empid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BasicSalary" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseRent" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Transportallowance" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MedicalAllowance" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PF" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Tax" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="usercredit">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="LoginId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="EmployeedbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AccountTypeMasters" EntityType="Self.AccountTypeMaster" />
+          <EntitySet Name="BankDetails" EntityType="Self.BankDetail" />
+          <EntitySet Name="BloodGroupMasters" EntityType="Self.BloodGroupMaster" />
+          <EntitySet Name="CastMasters" EntityType="Self.CastMaster" />
+          <EntitySet Name="CityMasters" EntityType="Self.CityMaster" />
+          <EntitySet Name="ContactDetails" EntityType="Self.ContactDetail" />
+          <EntitySet Name="CountryMasters" EntityType="Self.CountryMaster" />
+          <EntitySet Name="EducationDetails" EntityType="Self.EducationDetail" />
+          <EntitySet Name="EmployeeDetails" EntityType="Self.EmployeeDetail" />
+          <EntitySet Name="Experiences" EntityType="Self.Experience" />
+          <EntitySet Name="Logins" EntityType="Self.Login" />
+          <EntitySet Name="ReligionMasters" EntityType="Self.ReligionMaster" />
+          <EntitySet Name="salaries" EntityType="Self.salary" />
+          <EntitySet Name="StateMasters" EntityType="Self.StateMaster" />
+          <EntitySet Name="SubCastMasters" EntityType="Self.SubCastMaster" />
+          <EntitySet Name="opals" EntityType="Self.opal" />
+          <EntitySet Name="usercredits" EntityType="Self.usercredit" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmployeedbModelStoreContainer" CdmEntityContainer="EmployeedbEntities">
+          <EntitySetMapping Name="AccountTypeMasters">
+            <EntityTypeMapping TypeName="EmployeedbModel.AccountTypeMaster">
+              <MappingFragment StoreEntitySet="AccountTypeMaster">
+                <ScalarProperty Name="AccountTypeId" ColumnName="AccountTypeId" />
+                <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BankDetails">
+            <EntityTypeMapping TypeName="EmployeedbModel.BankDetail">
+              <MappingFragment StoreEntitySet="BankDetail">
+                <ScalarProperty Name="BankId" ColumnName="BankId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="IFSCCode" ColumnName="IFSCCode" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BloodGroupMasters">
+            <EntityTypeMapping TypeName="EmployeedbModel.BloodGroupMaster">
+              <MappingFragment StoreEntitySet="BloodGroupMaster">
+                <ScalarProperty Name="BloodGroupId" ColumnName="BloodGroupId" />
+                <ScalarProperty Name="BloodGroupName" ColumnName="BloodGroupName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CastMasters">
+            <EntityTypeMapping TypeName="EmployeedbModel.CastMaster">
+              <MappingFragment StoreEntitySet="CastMaster">
+                <ScalarProperty Name="CastId" ColumnName="CastId" />
+                <ScalarProperty Name="CastName" ColumnName="CastName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CityMasters">
+            <EntityTypeMapping TypeName="EmployeedbModel.CityMaster">
+              <MappingFragment StoreEntitySet="CityMaster">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactDetails">
+            <EntityTypeMapping TypeName="EmployeedbModel.ContactDetail">
+              <MappingFragment StoreEntitySet="ContactDetail">
+                <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="ResidentalAddress" ColumnName="ResidentalAddress" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="LandlineNumber" ColumnName="LandlineNumber" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CountryMasters">
+            <EntityTypeMapping TypeName="EmployeedbModel.CountryMaster">
+              <MappingFragment StoreEntitySet="CountryMaster">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EducationDetails">
+            <EntityTypeMapping TypeName="EmployeedbModel.EducationDetail">
+              <MappingFragment StoreEntitySet="EducationDetail">
+                <ScalarProperty Name="EductaionId" ColumnName="EductaionId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+                <ScalarProperty Name="Colloge_UnivercityName" ColumnName="Colloge/UnivercityName" />
+                <ScalarProperty Name="PassOutYear" ColumnName="PassOutYear" />
+                <ScalarProperty Name="Subject_Field" ColumnName="Subject/Field" />
+                <ScalarProperty Name="Percentage_Grade" ColumnName="Percentage/Grade" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeDetails">
+            <EntityTypeMapping TypeName="EmployeedbModel.EmployeeDetail">
+              <MappingFragment StoreEntitySet="EmployeeDetail">
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Father_HusbandName" ColumnName="Father/HusbandName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="BloodGroupId" ColumnName="BloodGroupId" />
+                <ScalarProperty Name="ReligionId" ColumnName="ReligionId" />
+                <ScalarProperty Name="CastId" ColumnName="CastId" />
+                <ScalarProperty Name="SubCastId" ColumnName="SubCastId" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateOn" ColumnName="UpdateOn" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Experiences">
+            <EntityTypeMapping TypeName="EmployeedbModel.Experience">
+              <MappingFragment StoreEntitySet="Experience">
+                <ScalarProperty Name="ExperienceId" ColumnName="ExperienceId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="DateOfJoinning" ColumnName="DateOfJoinning" />
+                <ScalarProperty Name="Experience1" ColumnName="Experience" />
+                <ScalarProperty Name="PreviousCompanyName" ColumnName="PreviousCompanyName" />
+                <ScalarProperty Name="CurrentCompanyName" ColumnName="CurrentCompanyName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="EmployeedbModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReligionMasters">
+            <EntityTypeMapping TypeName="EmployeedbModel.ReligionMaster">
+              <MappingFragment StoreEntitySet="ReligionMaster">
+                <ScalarProperty Name="ReligionId" ColumnName="ReligionId" />
+                <ScalarProperty Name="ReligionName" ColumnName="ReligionName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="salaries">
+            <EntityTypeMapping TypeName="EmployeedbModel.salary">
+              <MappingFragment StoreEntitySet="salary">
+                <ScalarProperty Name="Empid" ColumnName="Empid" />
+                <ScalarProperty Name="BasicSalary" ColumnName="BasicSalary" />
+                <ScalarProperty Name="HouseRent" ColumnName="HouseRent" />
+                <ScalarProperty Name="Transportallowance" ColumnName="Transportallowance" />
+                <ScalarProperty Name="MedicalAllowance" ColumnName="MedicalAllowance" />
+                <ScalarProperty Name="PF" ColumnName="PF" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StateMasters">
+            <EntityTypeMapping TypeName="EmployeedbModel.StateMaster">
+              <MappingFragment StoreEntitySet="StateMaster">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubCastMasters">
+            <EntityTypeMapping TypeName="EmployeedbModel.SubCastMaster">
+              <MappingFragment StoreEntitySet="SubCastMaster">
+                <ScalarProperty Name="SubCastId" ColumnName="SubCastId" />
+                <ScalarProperty Name="CastId" ColumnName="CastId" />
+                <ScalarProperty Name="SubCastName" ColumnName="SubCastName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="opals">
+            <EntityTypeMapping TypeName="EmployeedbModel.opal">
+              <MappingFragment StoreEntitySet="opal">
+                <ScalarProperty Name="Empid" ColumnName="Empid" />
+                <ScalarProperty Name="BasicSalary" ColumnName="BasicSalary" />
+                <ScalarProperty Name="HouseRent" ColumnName="HouseRent" />
+                <ScalarProperty Name="Transportallowance" ColumnName="Transportallowance" />
+                <ScalarProperty Name="MedicalAllowance" ColumnName="MedicalAllowance" />
+                <ScalarProperty Name="PF" ColumnName="PF" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usercredits">
+            <EntityTypeMapping TypeName="EmployeedbModel.usercredit">
+              <MappingFragment StoreEntitySet="usercredit">
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
